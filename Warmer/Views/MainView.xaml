@@ -1,0 +1,36 @@
+﻿<Controls:MetroWindow
+    x:Class="Warmer.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Warmer.Views"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    mc:Ignorable="d"
+    BorderBrush="{DynamicResource AccentColorBrush}"
+    BorderThickness="1"
+    TitleCaps="True"
+    Height="160"
+    Width="500"
+    WindowStartupLocation="CenterScreen"
+    SaveWindowPosition="False"
+>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+
+        <Controls:ToggleSwitch IsChecked="{Binding State}" OnLabel="{Binding OnLabel}" OffLabel="{Binding OffLabel}" Margin="2.5" Padding="0" FontSize="12" FontFamily="Segoe UI" ToolTip="{Binding StateTooltip}" Grid.ColumnSpan="2" />
+        <Label x:Name="TemperatureText" Style="{StaticResource Warmer.Label}" Grid.Row="1" />
+        <Slider x:Name="Temperature" Style="{StaticResource Warmer.Slider}" Minimum="1100" Maximum="6500" TickFrequency="100" IsSnapToTickEnabled="True" ToolTip="{Binding TemperatureTooltip}" Grid.Row="1" Grid.Column="1" />
+        <Label x:Name="IntervalText" Style="{StaticResource Warmer.Label}" Grid.Row="2" />
+        <Slider x:Name="Interval" Style="{StaticResource Warmer.Slider}" Minimum="100" Maximum="10000" TickFrequency="100" IsSnapToTickEnabled="True" ToolTip="{Binding IntervalTooltip}" Grid.Row="2" Grid.Column="1" />
+    </Grid>
+</Controls:MetroWindow>
