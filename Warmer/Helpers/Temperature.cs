@@ -34,12 +34,16 @@ namespace Warmer.Helpers
         public bool Set(int temperature)
         {
             if (temperature < 1100 || temperature > 25100)
+            {
                 return false;
+            }
 
             var device = NativeMethods.GetDC(IntPtr.Zero);
 
             if (device == IntPtr.Zero)
+            {
                 return false;
+            }
 
             if (!current_.HasValue || temperature_ != temperature)
             {

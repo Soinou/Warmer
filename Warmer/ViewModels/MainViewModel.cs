@@ -18,20 +18,8 @@ namespace Warmer.ViewModels
         {
             configuration_ = configuration;
             locale_ = locale;
-        }
 
-        /// <summary>
-        /// Gets/sets the display name
-        /// </summary>
-        public override string DisplayName
-        {
-            get
-            {
-                return "Warmer";
-            }
-            set
-            {
-            }
+            DisplayName = "Warmer";
         }
 
         /// <summary>

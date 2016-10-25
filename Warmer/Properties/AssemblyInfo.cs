@@ -6,7 +6,7 @@ using System.Windows;
 // General Information about an assembly is controlled through the following set of attributes.
 // Change these attribute values to modify the information associated with an assembly.
 [assembly: AssemblyTitle("Warmer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Warms the screen")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Warmer")]
@@ -42,7 +42,7 @@ using System.Windows;
 // 
 // You can specify all the values or you can default the Build and Revision Numbers by using the '*'
 // as shown below: [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("2.0.1.0")]
+[assembly: AssemblyFileVersion("2.0.1.0")]
 [assembly: Guid("e76116e8-a4d2-4b02-9f1d-c37215674ef6")]
 [assembly: NeutralResourcesLanguage("en-GB")]

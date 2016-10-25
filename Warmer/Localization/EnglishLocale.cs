@@ -22,6 +22,9 @@ namespace Warmer.Localization
             strings["Main.StateTooltip"] = "Enables/Disables the screen warming";
             strings["Main.TemperatureTooltip"] = "Screen 'temperature' (Lower means more red, higher means less red)";
             strings["Main.IntervalTooltip"] = "Interval between two screen gamma updates (Change if you have problems with other applications changing your screen gamma)";
+            strings["Restart.Title"] = "Warmer - Info";
+            strings["Restart.Message"] = "You should now be able to use screen temperatures lower than 3300K after restarting your computer.";
+            strings["Extend.Message"] = "extend the temperature range";
         }
     }
 }

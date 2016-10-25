@@ -51,4 +51,5 @@ Filename: "{sys}\taskkill.exe"; Parameters: "/f /im {#MyAppExeName}"; Flags: run
 Type: filesandordirs; Name: "{app}\data"
 
 [Registry]
-Root: HKLM; Subkey: "Software\Microsoft\Windows NT\CurrentVersion\ICM"; ValueType: dword; ValueName: "GdiIcmGammaRange"; ValueData: "00000100"; Flags: createvalueifdoesntexist
+Root: HKLM32; Subkey: "Software\Microsoft\Windows NT\CurrentVersion\ICM"; ValueType: dword; ValueName: "GdiIcmGammaRange"; ValueData: "$00000100"; Flags: deletevalue
+Root: HKLM64; Subkey: "Software\Microsoft\Windows NT\CurrentVersion\ICM"; ValueType: dword; ValueName: "GdiIcmGammaRange"; ValueData: "$00000100"; Flags: deletevalue; Check: IsWin64
