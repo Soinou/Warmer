@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "warmer.io",
+  "title": "Warmer.io",
+  "version": "1.0.0",
+  "homepage": "http://soinou.github.io/Warmer",
+  "author": "Abricot Soinou <abricot.soinou@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+      "dev": "node node_modules/gulp/bin/gulp dev"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Soinou/Warmer"
+  }
+}

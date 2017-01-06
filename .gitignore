@@ -240,3 +240,6 @@ _Pvt_Extensions
 Warmer.Install\Releases
 Warmer.Install\build
 Warmer.Install\obj
+
+# VSCode files
+.vscode
