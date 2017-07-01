@@ -1,4 +1,5 @@
-﻿using Warmer.Models;
+﻿using System;
+using Warmer.Models;
 using Warmer.Utils;
 
 namespace Warmer.Helpers
@@ -9,6 +10,23 @@ namespace Warmer.Helpers
     internal class WarmerTask : TimedTask
     {
         /// <summary>
+        /// Configuration
+        /// </summary>
+        private Configuration configuration_;
+
+        /// <summary>
+        /// Temperature helper
+        /// </summary>
+        private TemperatureHelper helper_;
+
+        /// <summary>
+        /// Boolean to fix the idle/screen plug/unplug update problem
+        ///
+        /// Yes, that's incredibly hacky
+        /// </summary>
+        private bool idle_fix_;
+
+        /// <summary>
         /// Creates a new WarmerTask
         /// </summary>
         /// <param name="configuration">Configuration</param>
@@ -16,6 +34,7 @@ namespace Warmer.Helpers
         {
             helper_ = new TemperatureHelper();
             configuration_ = configuration;
+            idle_fix_ = false;
 
             configuration_.TemperatureChanged += OnTemperatureChanged;
             configuration_.StateChanged += OnStateChanged;
@@ -34,7 +53,9 @@ namespace Warmer.Helpers
         /// </summary>
         public override void Run()
         {
-            helper_.Set(configuration_.Temperature);
+            // Yes, I don't know why, but it works
+            idle_fix_ = !idle_fix_;
+            helper_.Set(configuration_.Temperature + (idle_fix_ ? 1 : 0));
         }
 
         /// <summary>
@@ -59,6 +80,8 @@ namespace Warmer.Helpers
         /// <param name="interval">New interval</param>
         private void OnIntervalChanged(int interval)
         {
+            Console.WriteLine("[" + DateTime.Now.ToLocalTime() + "] updating interval to " + interval);
+
             Interval = interval;
         }
 
@@ -84,20 +107,12 @@ namespace Warmer.Helpers
         /// <param name="temperature">New temperature</param>
         private void OnTemperatureChanged(int temperature)
         {
+            Console.WriteLine("[" + DateTime.Now.ToLocalTime() + "] updating temperature to " + temperature);
+
             if (Running)
             {
                 helper_.Set(temperature);
             }
         }
-
-        /// <summary>
-        /// Configuration
-        /// </summary>
-        private Configuration configuration_;
-
-        /// <summary>
-        /// Temperature helper
-        /// </summary>
-        private TemperatureHelper helper_;
     }
 }

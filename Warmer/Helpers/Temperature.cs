@@ -9,6 +9,21 @@ namespace Warmer.Helpers
     public class TemperatureHelper
     {
         /// <summary>
+        /// Neutral screen temperature
+        /// </summary>
+        private const int NeutralTemp = 6500;
+
+        /// <summary>
+        /// Current gamma ramp
+        /// </summary>
+        private GammaRamp? current_;
+
+        /// <summary>
+        /// Current temperature
+        /// </summary>
+        private int temperature_;
+
+        /// <summary>
         /// Creates a new TemperatureHelper
         /// </summary>
         public TemperatureHelper()
@@ -59,20 +74,5 @@ namespace Warmer.Helpers
 
             return result;
         }
-
-        /// <summary>
-        /// Neutral screen temperature
-        /// </summary>
-        private const int NeutralTemp = 6500;
-
-        /// <summary>
-        /// Current gamma ramp
-        /// </summary>
-        private GammaRamp? current_;
-
-        /// <summary>
-        /// Current temperature
-        /// </summary>
-        private int temperature_;
     }
 }
